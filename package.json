@@ -11,5 +11,8 @@
   ],
   "repository": "https://github.com/jcam1/bosyu-generator-cli",
   "author": "fujiwaraizuho",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^5.0.0"
+  }
 }
