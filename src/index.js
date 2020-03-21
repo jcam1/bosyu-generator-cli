@@ -4,14 +4,14 @@
 const program = require("commander");
 
 program
-  .usage("-t TITLE -d DESCRIPTION -o /path")
-  .version("0.0.1")
-  .option("-t, --title <value>", "BOSYU Title", String, "TEST")
-  .option(
-    "-d, --description <value>",
-    "BOSYU Description",
-    String,
-    "This is description."
-  )
-  .option("-o, --out <path> ", "Image output path", String, "/")
-  .parse(process.argv);
+	.usage("-t TITLE -d DESCRIPTION -o /path")
+	.version("0.0.1")
+	.option("-t, --title <value>", "BOSYU Title", String, "TEST")
+	.option(
+		"-d, --description <value>",
+		"BOSYU Description",
+		String,
+		"This is description."
+	)
+	.option("-o, --out <path> ", "Image output path", String, "/")
+	.parse(process.argv);
