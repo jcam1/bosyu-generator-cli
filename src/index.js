@@ -5,6 +5,7 @@ const program = require("commander");
 
 program
   .usage("-t TITLE -d DESCRIPTION -o /path")
+  .version("0.0.1")
   .option("-t, --title <value>", "BOSYU Title", String, "TEST")
   .option(
     "-d, --description <value>",
