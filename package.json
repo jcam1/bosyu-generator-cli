@@ -1,0 +1,15 @@
+{
+  "name": "bosyu-generator",
+  "version": "0.0.1",
+  "bin": {
+    "bosyu-generator": "src/index.js"
+  },
+  "keywords": [
+    "bosyu",
+    "generator",
+    "jcam1"
+  ],
+  "repository": "https://github.com/jcam1/bosyu-generator-cli",
+  "author": "fujiwaraizuho",
+  "license": "MIT"
+}
