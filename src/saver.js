@@ -1,8 +1,18 @@
-module.exports.save = (function(canvas, filepath, callback) {
-	"use strict";
+const fs = require("fs");
 
-	const fs = require("fs");
-	const buffer = new Buffer(canvas.toDataURL().splot(",")[1], "base64");
+function save(canvas, filepath) {
+	const buffer = new Buffer.from(canvas.toDataURL().split(",")[1], "base64");
 
-	fs.writeFile(filepath, buffer, callback);
-})();
+	fs.writeFile(filepath, buffer, error => {
+		if (error) {
+			console.error("An error has occured.");
+			console.error(error);
+
+			throw error;
+		} else {
+			console.info("BOSYU generation completed!");
+		}
+	});
+}
+
+module.exports = save;
