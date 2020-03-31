@@ -1,8 +1,9 @@
 #!/usr/bin/env node
-"use strict";
 
 const program = require("commander");
+
 const Bosyu = require("./bosyu");
+const saver = require("./saver");
 
 program
 	.usage("-t TITLE -d DESCRIPTION -o /path")
@@ -14,8 +15,8 @@ program
 		String,
 		"This is description."
 	)
-	.option("-w, --width <size>", "Image Width", Number, 1025)
-	.option("-h, --height <size>", "Image Height", Number, 576)
+	.option("-sw, --width <size>", "Image Width", Number, 1025)
+	.option("-sh, --height <size>", "Image Height", Number, 576)
 	.option(
 		"-bc, --backcolor <value>",
 		"Image Background Color",
@@ -23,13 +24,14 @@ program
 		"#FFF"
 	)
 	.option("-fc --fontcolor <value>", "Image Font Color", String, "#333")
-	.option("-o, --out <path> ", "Image output path", String, ".");
+	.option("-o, --out <path> ", "Image output path", String, process.cwd())
+	.option("-n, --name <value>", "Image file name", String, "bosyu.png");
 
 program.parse(process.argv);
 
 const bosyu = new Bosyu();
 
-bosyu.generator(
+const canvas = bosyu.generator(
 	program.title,
 	program.description,
 	program.width,
@@ -37,3 +39,5 @@ bosyu.generator(
 	program.backcolor,
 	program.fontcolor
 );
+
+saver(canvas, program.out + "/" + program.name);
