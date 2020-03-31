@@ -13,6 +13,7 @@
 	"author": "fujiwaraizuho",
 	"license": "MIT",
 	"dependencies": {
+		"canvas": "^2.6.1",
 		"commander": "^5.0.0"
 	}
 }
