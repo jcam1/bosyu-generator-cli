@@ -35,13 +35,10 @@ function generator(title, body, width, height, backColor, fontColor, settings) {
 	const canvas = createCanvas(width, height);
 	const ctx = canvas.getContext("2d");
 
-	const lineWidth = width - height * 2;
+	const lineWidth = width - settings.padding * 2;
 
 	/* draw background color */
-	ctx.beginPath();
-
-	ctx.fillStyle = `rgba(${backColor[0]},${backColor[1]},${backColor[2]},${backColor[3]})`;
-
+	ctx.fillStyle = backColor;
 	ctx.fillRect(0, 0, width, height);
 
 	/* set baseline */
@@ -49,7 +46,7 @@ function generator(title, body, width, height, backColor, fontColor, settings) {
 
 	/* draw title */
 	ctx.font = settings.titleSettings.font;
-	ctx.fillStyle = `rgba(${fontColor[0]},${fontColor[1]},${fontColor[2]},${fontColor[3]})`;
+	ctx.fillStyle = fontColor;
 
 	const titleLines = splitByMeasureWidth(title, lineWidth, ctx);
 	const titleLineCnt = titleLines.length;
@@ -66,7 +63,7 @@ function generator(title, body, width, height, backColor, fontColor, settings) {
 
 	/* draw body */
 	ctx.font = settings.bodySettings.font;
-	ctx.fillStyle = `rgba(${fontColor[0]},${fontColor[1]},${fontColor[2]},${fontColor[3]})`;
+	ctx.fillStyle = fontColor;
 
 	const bodyLines = splitByMeasureWidth(body, lineWidth, ctx);
 	const bodyLineCnt = bodyLines.length;
