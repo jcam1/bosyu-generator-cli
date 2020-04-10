@@ -6,7 +6,7 @@ const Bosyu = require("./bosyu");
 const saver = require("./saver");
 
 program
-	.usage("-t TITLE -d DESCRIPTION -o /path")
+	.usage("-t TITLE -d DESCRIPTION -n bosyu")
 	.version("0.0.1")
 	.option("-t, --title <value>", "BOSYU Title", String, "TEST")
 	.option(
@@ -25,7 +25,7 @@ program
 	)
 	.option("-fc --fontcolor <value>", "Image Font Color", String, "#333")
 	.option("-o, --out <path> ", "Image output path", String, process.cwd())
-	.option("-n, --name <value>", "Image file name", String, "bosyu.png");
+	.option("-n, --name <value>", "Image file name", String, "bosyu");
 
 program.parse(process.argv);
 
@@ -40,4 +40,4 @@ const canvas = bosyu.generator(
 	program.fontcolor
 );
 
-saver(canvas, program.out + "/" + program.name);
+saver(canvas, program.out + "/" + program.name + ".png");
