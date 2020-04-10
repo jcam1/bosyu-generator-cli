@@ -15,7 +15,7 @@ program
 		String,
 		"This is description."
 	)
-	.option("-sw, --width <size>", "Image Width", Number, 1025)
+	.option("-sw, --width <size>", "Image Width", Number, 1024)
 	.option("-sh, --height <size>", "Image Height", Number, 576)
 	.option(
 		"-bc, --backcolor <value>",
