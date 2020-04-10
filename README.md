@@ -43,5 +43,5 @@ Options:
 
 ## License / ライセンス
 
-This project is licensed under the MIT License - see the LICENSE.md file for details
-このプロジェクトは MIT ライセンスの元にライセンスされています。 詳細は LICENSE.md をご覧ください。
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/jcam1/bosyu-generator-cli/blob/master/LICENSE) file for details \
+このプロジェクトは MIT ライセンスの元にライセンスされています。 詳細は [LICENSE.md](https://github.com/jcam1/bosyu-generator-cli/blob/master/LICENSE) をご覧ください。
